@@ -26,6 +26,10 @@ urlpatterns = [
 ]
 
 urlpatterns += [
+    path('flashcards/', include('flashcards.urls')),
+]
+
+urlpatterns += [
     path('', RedirectView.as_view(url='flashcards', permanent=False)),
 ]
 

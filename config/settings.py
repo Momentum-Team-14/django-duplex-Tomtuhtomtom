@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# MAKE SURE YOU ADD YOUR APPS - also any necessary installed apps
 INSTALLED_APPS = [
     'django.contrib.admin',
     'registration',
@@ -53,6 +53,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
+# when using a templates directory, update DIRS as below
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -107,6 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+# don't forget to update timezone
 TIME_ZONE = 'US/EASTERN'
 
 USE_I18N = True
@@ -117,6 +119,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
+# update these after creating static directory
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'

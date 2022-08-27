@@ -10,5 +10,6 @@ urlpatterns = [
     path('question/<int:pk>', views.QuestionDetailView.as_view(), name='question-detail'),
     path('card/<int:pk>', views.CardDetailView.as_view(), name='card-detail'),
     path('box/<int:pk>', views.BoxDetailView.as_view(), name='box-detail'),
+    path('subjects/', views.SubjectListView.as_view(), name='subjects'),
     path('subject/<int:pk>', views.SubjectDetailView.as_view(), name='subject-detail'),
 ]

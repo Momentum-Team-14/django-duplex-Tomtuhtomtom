@@ -28,5 +28,9 @@ class BoxDetailView(generic.DetailView):
     model = Box
 
 
+class SubjectListView(generic.ListView):
+    model = Subject
+
+
 class SubjectDetailView(generic.DetailView):
     model = Subject

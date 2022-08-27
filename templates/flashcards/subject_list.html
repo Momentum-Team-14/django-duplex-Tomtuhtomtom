@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p><a href="{% url 'index' %}">Home</a></p>
+    <h1>All Subjects</h1>
+    {% if subject_list %}
+    <ul>
+        {% for subject in subject_list %}
+            <li>
+                <em><a href="{{ subject.get_absolute_url }}">{{ subject.name }}</a></em>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no subjects created yet.</p>
+    {% endif %}
+{% endblock %}

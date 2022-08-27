@@ -9,5 +9,5 @@
             <div><a href="{{ question.get_absolute_url }}">See Question Test</a></div>
             <div><a href="{{ card.get_absolute_url }}">See Card Test</a></div>
             <div><a href="{{ box.get_absolute_url }}">See Box Test</a></div>
-            <div><a href="{{ subject.get_absolute_url }}">See Subject Test</a></div>
+            <div><a href="{% url 'subjects' %}">See Subject Test</a></div>
 {% endblock %}

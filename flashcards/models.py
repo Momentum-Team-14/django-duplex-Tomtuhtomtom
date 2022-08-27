@@ -58,7 +58,7 @@ class Card(models.Model):
 
 class Box(models.Model):
     name = models.IntegerField(blank=True, null=True)
-    cards = models.ManyToManyField('Card', related_name="boxes")
+    cards = models.ManyToManyField('Card', blank=True, null=True, related_name="boxes")
 
     def get_absolute_url(self):
         return reverse('box-detail', args=[str(self.id)])
@@ -69,7 +69,7 @@ class Box(models.Model):
 
 class Subject(models.Model):
     name = models.CharField(max_length=200, help_text='Enter Subject')
-    boxes = models.ManyToManyField('Box', related_name="subjects")
+    boxes = models.ManyToManyField('Box', blank=True, null=True, related_name="subjects")
 
     def get_absolute_url(self):
         return reverse('subject-detail', args=[str(self.id)])

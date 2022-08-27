@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div>Hello!</div>
+<header>
+    <div id="main-title">Hello!</div>
+        <h1 id="subtitle"></h1>
+</header>
+            <div><a href="{{ answer.get_absolute_url }}">See Answer Test</a></div>
 {% endblock %}

@@ -9,6 +9,7 @@
             <li>
                 <em><a href="{{ box.get_absolute_url }}">{{ box.name }}</a></em>
             </li>
+            <p><a href="{{ subject.get_absolute_url }}">Back</a></p>
         {% endfor %}
     </ul>
     {% else %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p><a href="{% url 'index' %}">Home</a></p>
+    <h1>All Answers</h1>
+    {% if answer_list %}
+    <ul>
+        {% for answer in answer_list %}
+            <li>
+                <em><a href="{{ answer.get_absolute_url }}">{{ answer.answer_content }}</a></em>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no answers created yet.</p>
+    {% endif %}
+{% endblock %}

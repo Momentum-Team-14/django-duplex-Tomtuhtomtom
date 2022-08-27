@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p><a href="{% url 'index' %}">Home</a></p>
+    <h1>Boxes</h1>
+    {% if box_list %}
+    <ul>
+        {% for box in box_list %}
+            <li>
+                <em><a href="{{ box.get_absolute_url }}">{{ box.name }}</a></em>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no boxes created yet.</p>
+    {% endif %}
+{% endblock %}

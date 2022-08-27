@@ -5,9 +5,9 @@
     <div id="main-title">Hello!</div>
         <h1 id="subtitle"></h1>
 </header>
-            <div><a href="{{ answer.get_absolute_url }}">See Answer Test</a></div>
-            <div><a href="{{ question.get_absolute_url }}">See Question Test</a></div>
-            <div><a href="{{ card.get_absolute_url }}">See Card Test</a></div>
-            <div><a href="{{ box.get_absolute_url }}">See Box Test</a></div>
+            <div><a href="{% url 'answers' %}">See Answer Test</a></div>
+            <div><a href="{% url 'questions' %}">See Question Test</a></div>
+            <div><a href="{% url 'cards' %}">See Card Test</a></div>
+            <div><a href="{% url 'boxes' %}">See Box Test</a></div>
             <div><a href="{% url 'subjects' %}">See Subject Test</a></div>
 {% endblock %}

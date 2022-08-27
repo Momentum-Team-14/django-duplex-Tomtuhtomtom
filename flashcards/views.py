@@ -9,6 +9,10 @@ def index(request):
     return render(request, 'index.html', {})
 
 
+class AnswerListView(generic.ListView):
+    model = Answer
+    
+    
 class AnswerDetailView(generic.DetailView):
     model = Answer
 
@@ -16,14 +20,26 @@ class AnswerDetailView(generic.DetailView):
     #     return render(request, 'answer_detail.html', {})
 
 
+class QuestionListView(generic.ListView):
+    model = Question
+
+
 class QuestionDetailView(generic.DetailView):
     model = Question
+
+
+class CardListView(generic.ListView):
+    model = Card
 
 
 class CardDetailView(generic.DetailView):
     model = Card
 
 
+class BoxListView(generic.ListView):
+    model = Box
+    
+    
 class BoxDetailView(generic.DetailView):
     model = Box
 

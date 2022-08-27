@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p><a href="{% url 'index' %}">Home</a></p>
+    <h1>All Cards</h1>
+    {% if card_list %}
+    <ul>
+        {% for card in card_list %}
+            <li>
+                <em><a href="{{ card.get_absolute_url }}">{{ card.question }}</a></em>
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no cards created yet.</p>
+    {% endif %}
+{% endblock %}

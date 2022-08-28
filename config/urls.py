@@ -42,5 +42,4 @@ urlpatterns += [
     path('', RedirectView.as_view(url='flashcards', permanent=False)),
 ]
 
-
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

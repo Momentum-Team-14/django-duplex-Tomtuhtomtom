@@ -131,4 +131,5 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Django Registration Redux
+SIMPLE_BACKEND_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'flashcards.User'

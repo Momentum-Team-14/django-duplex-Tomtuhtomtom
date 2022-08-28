@@ -10,5 +10,7 @@
         <div><a href="{% url 'boxes' %}">See Box Test</a></div>
         <p><a href="{% url 'subjects' %}">Back</a></p>
     </p>
+    <p><a href="{% url 'subject-update' subject.pk %}">Edit</a></p>
+    <p><a href="{% url 'subject-delete' subject.pk %}">Delete</a></p>
 
 {% endblock %}

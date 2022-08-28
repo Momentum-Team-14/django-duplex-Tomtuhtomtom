@@ -8,5 +8,7 @@
     <p><strong>The answer is:</strong>
         <p>{{answer}}</p>
     </p>
+    <p><a href="{% url 'answer-update' answer.pk %}">Edit</a></p>
+    <p><a href="{% url 'answer-delete' answer.pk %}">Delete</a></p>
 
 {% endblock %}

@@ -10,5 +10,7 @@
         <div><a href="{% url 'questions' %}">See Question Test</a></div>
         <div><a href="{% url 'answers' %}">See Answer Test</a></div>
     </p>
+    <p><a href="{% url 'card-update' card.pk %}">Edit</a></p>
+    <p><a href="{% url 'card-delete' card.pk %}">Delete</a></p>
 
 {% endblock %}

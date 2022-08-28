@@ -8,10 +8,12 @@
         {% for card in card_list %}
             <li>
                 <em><a href="{{ card.get_absolute_url }}">{{ card.question }}</a></em>
+                <p>{{ card.answer }}</p>
             </li>
         {% endfor %}
     </ul>
     {% else %}
         <p>There are no cards created yet.</p>
     {% endif %}
+    <p><a href="{% url 'card-create' %}">Add Card</a></p>
 {% endblock %}

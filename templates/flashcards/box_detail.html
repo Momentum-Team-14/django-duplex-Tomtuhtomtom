@@ -9,5 +9,7 @@
         <p>{{box}}</p>
         <div><a href="{% url 'cards' %}">See Card Test</a></div>
     </p>
+    <p><a href="{% url 'box-update' box.pk %}">Edit</a></p>
+    <p><a href="{% url 'box-delete' box.pk %}">Delete</a></p>
 
 {% endblock %}

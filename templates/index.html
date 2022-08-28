@@ -1,28 +1,26 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <header>
-    <div id="main-title">Welcome to Flashcards!</div>
-        <h1 id="subtitle"></h1>
+    <h1 id="main-title">Welcome to <em>Flashcards!</em></h1>
+        <h2 id="subtitle"></h2>
 </header>
-            <div><a href="{% url 'admin:index' %}">Admin</a></div>
             {% if user.is_authenticated %}
-                        <li>User: {{ user.get_username }}</li>
+            <div class="page-title"><a class="linked-titles" href="{% url 'subjects' %}">Go to Subjects</a></div>
+                        <li>Hello, {{ user.get_username }}!</li>
                         <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
-                        <div><a href="{% url 'subjects' %}">Go to Subjects</a></div>
             {% else %}
                         <p><a href="{% url 'login'%}?next={{request.path}}">Login</a></p>
             {% endif %}
                         <div><a href="">Register</a></div>
-                        <div>Once the user page is open, it will show:</div>
-                        <p>What subject would you like to create flashcards for?</p>
-                        <p>Create subject button?</p>
-                        <div>Below links are for testing purposes</div>
+                        <p>Below links are for testing purposes</p>
                         <div><a href="{% url 'answers' %}">See Answer Test</a></div>
                         <div><a href="{% url 'questions' %}">See Question Test</a></div>
                         <div><a href="{% url 'cards' %}">See Card Test</a></div>
                         <div><a href="{% url 'boxes' %}">See Box Test</a></div>
                         <div><a href="{% url 'subjects' %}">See Subject Test</a></div>
+                        <div><a href="{% url 'admin:index' %}">Admin</a></div>
 {% endblock %}    
                         
                         

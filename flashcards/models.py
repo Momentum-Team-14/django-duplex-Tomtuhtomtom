@@ -64,7 +64,7 @@ class Box(models.Model):
         return reverse('box-detail', args=[str(self.id)])
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 
 class Subject(models.Model):

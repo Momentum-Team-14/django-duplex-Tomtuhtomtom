@@ -9,7 +9,7 @@
             <div><em class="card-title">{{card.question}}</em></div>
         </div>
     </div>
-        <p id="show-answer"><button>Show Answer</button><button>Hide Answer</button></p>
+        <p id="get-answer-holder"><a class="linked-titles" href="{% url 'answer-detail' pk=card.answer.pk %}">Get Answer</a></p>
     <div><a href="{% url 'questions' %}">See Question Test</a></div>
     <div><a href="{% url 'answers' %}">See Answer Test</a></div>
         <p><a href="{% url 'card-update' card.pk %}">Edit</a></p>

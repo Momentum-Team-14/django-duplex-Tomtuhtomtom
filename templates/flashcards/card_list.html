@@ -2,14 +2,15 @@
 
 {% block content %}
 <p><a href="{% url 'index' %}">Home</a></p>
-    <h1>All Cards</h1>
+    <h1 class="page-title">All Cards</h1>
     {% if card_list %}
-    <ul>
+    <ul class="card-list">
         {% for card in card_list %}
-            <li>
-                <em><a href="{{ card.get_absolute_url }}">{{ card.question }}</a></em>
-                <p>{{ card.answer }}</p>
-            </li>
+            <div id="card-box">
+                <li class="subject-list-container">
+                <em><a class="card-list-items" href="{{ card.get_absolute_url }}">{{ card.question }}</a></em>
+                </li>
+            </div>
         {% endfor %}
     </ul>
     {% else %}

@@ -5,6 +5,26 @@ body{
     margin: 0;
 }
 
+#main-logo{
+    display: flex;
+    margin: 2rem 17rem 1rem 1rem;
+    padding: 0;
+}
+
+.main-logo{
+    border: 0.1rem solid black;
+    border-radius: 0.2rem;
+    background-color: white;
+    width: 25rem;
+    height: 3rem;
+    line-height: 3rem;
+    color: red;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1rem;
+
+}
+
 #main-title {
     color: red;
     background: linear-gradient(to right bottom, rgb(236, 187, 95), yellow);
@@ -43,7 +63,7 @@ li {
     margin: 2rem;
 }
 
-.subject-list {
+.subject-list, .card-list{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -113,4 +133,15 @@ li {
     text-align: center;
     font-size: 4rem;
     color: rgb(88, 4, 126);
+}
+
+.card-list-items {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(88, 4, 126);
+}
+
+.card-list-items:hover{
+    color: yellow;
 }

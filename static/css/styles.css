@@ -153,14 +153,15 @@ li {
     background-color: white;
     width: 20rem;
     height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-title{
     font-size: 1.5rem;
     font-weight: bold;
     color: rgb(88, 4, 126);
-    line-height: 8rem;
-    width: 20rem;
-    border: 1px solid red;
-    height: 2rem;
+    text-align: center;
+    width: 100%;
 }

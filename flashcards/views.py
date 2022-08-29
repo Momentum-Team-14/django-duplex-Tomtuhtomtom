@@ -122,3 +122,10 @@ class SubjectUpdate(UpdateView):
 class SubjectDelete(DeleteView):
     model = Subject
     success_url = reverse_lazy('subjects')
+
+
+def showAnswer():
+    pass
+
+def hideAnswer():
+    pass

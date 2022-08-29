@@ -9,11 +9,10 @@
             <div><em class="card-title">{{card.question}}</em></div>
         </div>
     </div>
-    <p></p>
-        <div><a href="{% url 'questions' %}">See Question Test</a></div>
-        <div><a href="{% url 'answers' %}">See Answer Test</a></div>
-    </p>
-    <p><a href="{% url 'card-update' card.pk %}">Edit</a></p>
-    <p><a href="{% url 'card-delete' card.pk %}">Delete</a></p>
+        <p id="show-answer"><button>Show Answer</button><button>Hide Answer</button></p>
+    <div><a href="{% url 'questions' %}">See Question Test</a></div>
+    <div><a href="{% url 'answers' %}">See Answer Test</a></div>
+        <p><a href="{% url 'card-update' card.pk %}">Edit</a></p>
+        <p><a href="{% url 'card-delete' card.pk %}">Delete</a></p>
 
 {% endblock %}

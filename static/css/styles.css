@@ -50,7 +50,7 @@ li {
     justify-content: center;
 }
 
-.subject-list-container {
+.subject-list-container{
     border: 1rem solid rgb(121, 224, 121);
     border-radius: 3rem;
     outline: 1rem solid black;
@@ -64,8 +64,53 @@ li {
     text-decoration: none;
     font-size: 3rem;
     font-weight: bold;
+    color: rgb(88, 4, 126);
 }
 
 .subject-list-items:hover{
     color: yellow;
+}
+
+.subject-title{
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgb(88, 4, 126);
+}
+
+.subject-page-title{
+    display: flex;
+    justify-content: center;
+}
+
+.subject-page-container{
+    border: 1rem solid rgb(121, 224, 121);
+    border-radius: 3rem;
+    outline: 1rem solid black;
+    background-color: green;
+    width: 20rem;
+    height: 10rem;
+    line-height: 6rem;
+    text-align: center;
+}
+
+.box-list-container{
+    font-size: 4rem;
+    color: rgb(88, 4, 126);
+}
+
+
+#box-links{
+    text-decoration: none;
+    font-size: 10rem;
+}
+
+#box-detail-title{
+    text-align: center;
+    font-size: 10rem;
+}
+
+#box-number{
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(88, 4, 126);
 }

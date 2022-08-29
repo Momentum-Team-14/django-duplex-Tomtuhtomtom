@@ -2,14 +2,16 @@
 
 {% block content %}
 <p><a href="{% url 'index' %}">Home</a></p>
-    <h1>Boxes</h1>
-    {% if box_list %}
-    <ul>
+<h1 class="page-title">Boxes</h1>
+{% if box_list %}
+
+    <ul class="subject-list">
         {% for box in box_list %}
-            <li>
-                <em><a href="{{ box.get_absolute_url }}">{{ box.name }}</a></em>
+            <div class="box-list-picture">
+            <li class="box-list-container">&nbsp;&nbsp;{{ box.name }}
+                <a id="box-links" href="{{ box.get_absolute_url }}">&#x1f4e6</a>
             </li>
-            <p><a href="{{ subject.get_absolute_url }}">Back</a></p>
+            </div>
         {% endfor %}
     </ul>
     {% else %}

@@ -60,6 +60,9 @@ class Box(models.Model):
     name = models.IntegerField(blank=True, null=True)
     cards = models.ManyToManyField('Card', blank=True, null=True, related_name="boxes")
 
+    class Meta:
+        verbose_name_plural = "boxes"
+
     def get_absolute_url(self):
         return reverse('box-detail', args=[str(self.id)])
 

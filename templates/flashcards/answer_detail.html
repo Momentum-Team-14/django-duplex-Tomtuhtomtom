@@ -9,6 +9,10 @@
             <div><em class="card-title">{{answer}}</em></div>
         </div>
     </div>
+    <div class="correct-question-box">
+        <p class="page-title">Did you get it right?</p>
+        <button>Yes</button><button>No</button>
+    </div>
     <p><a href="{% url 'answer-update' answer.pk %}">Edit</a></p>
     <p><a href="{% url 'answer-delete' answer.pk %}">Delete</a></p>
 

@@ -26,14 +26,14 @@ SECRET_KEY = 'django-insecure-(ilqc-kg7o+b=g+csw2x#z8=itx*^4r#bkyx29qm)g2c69ub#3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
 # MAKE SURE YOU ADD YOUR APPS - also any necessary installed apps
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'registration',
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -134,5 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django Registration Redux
 SIMPLE_BACKEND_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'flashcards.User'
-ACCOUNT_ACTIVATION_DAYS = 2343
 LOGIN_REDIRECT_URL = '/'

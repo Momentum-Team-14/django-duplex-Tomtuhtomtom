@@ -2,7 +2,7 @@
 
 {% block content %}
 <p><a href="{% url 'index' %}">Home</a></p>
-    <h1>All Answers</h1>
+    <h1 class="page-title">All Answers</h1>
     
     {% if answer_list %}
     <ul>
@@ -13,7 +13,7 @@
         {% endfor %}
     </ul>
     {% else %}
-        <p>There are no answers created yet.</p>
+        <p class="page-title">There are no answers created yet.</p>
     {% endif %}
     <p><a href="{% url 'answer-create' %}">Add Answer</a></p>
 {% endblock %}

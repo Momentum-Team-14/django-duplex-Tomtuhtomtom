@@ -134,5 +134,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Django Registration Redux
 SIMPLE_BACKEND_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'flashcards.User'
-
+ACCOUNT_ACTIVATION_DAYS = 2343
 LOGIN_REDIRECT_URL = '/'

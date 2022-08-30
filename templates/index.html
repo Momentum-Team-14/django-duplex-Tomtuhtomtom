@@ -6,6 +6,8 @@
     <ul id="main-logo">
         <li class="main-logo"></li><li class="main-logo"></li><li class="main-logo"></li>
         <li class="main-logo"></li><li class="main-logo"></li><li class="main-logo"></li>
+        <li class="main-logo"></li><li class="main-logo"></li><li class="main-logo"></li>
+        <li class="main-logo"></li><li class="main-logo"></li><li class="main-logo"></li>
         <li class="main-logo"><em>Flashcards!</em></li>
     </ul>
 </header>
@@ -15,8 +17,8 @@
                         <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
             {% else %}
                         <p><a href="{% url 'login'%}?next={{request.path}}">Login</a></p>
+                        <div><a href="{{'/accounts/register/'}}?next={{request.path}}">Register</a></div>
             {% endif %}
-                        <div><a href="">Register</a></div>
                         <p>Below links are for testing purposes</p>
                         <div><a href="{% url 'answers' %}">See Answer Test</a></div>
                         <div><a href="{% url 'questions' %}">See Question Test</a></div>

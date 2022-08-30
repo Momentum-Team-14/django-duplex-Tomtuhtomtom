@@ -9,15 +9,19 @@
         <li class="main-logo"></li><li class="main-logo"></li><li class="main-logo"></li>
         <li class="main-logo"></li><li class="main-logo"></li><li class="main-logo"></li>
         <li class="main-logo"><em>Flashcards!</em></li>
+        <li class="user-info">
+        {% if user.is_authenticated %}
+                    <div id="username">Hello,&nbsp;{{ user.get_username }}!</div>
+                    <div><a class="log-links" href="{{ '/accounts/logout/' }}?next={{request.path}}">Logout</a></div>
+        {% else %}
+                    <p><a class="log-links" href="/accounts/login">Login</a></p>
+        {% endif %}
+        </li>
     </ul>
 </header>
-            {% if user.is_authenticated %}
-            <div class="page-title"><a class="linked-titles" href="{% url 'subjects' %}">Go to Subjects</a></div>
-                        <div>Hello, {{ user.get_username }}!</div>
-                        <div><a href="{{ '/accounts/logout/' }}?next={{request.path}}">Logout</a></div>
-            {% else %}
-                        <p><a href="/accounts/login">Login</a></p>
-            {% endif %}
+        {% if user.is_authenticated %}
+        <div class="page-title"><a class="linked-titles" href="{% url 'subjects' %}">Go to Subjects</a></div>
+        {% endif %}
                         <p>Below links are for testing purposes</p>
                         <div><a href="{% url 'answers' %}">See Answer Test</a></div>
                         <div><a href="{% url 'questions' %}">See Question Test</a></div>

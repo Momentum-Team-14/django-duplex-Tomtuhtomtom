@@ -22,7 +22,28 @@ body{
     font-weight: bold;
     font-size: 2rem;
     padding: 1rem;
+}
 
+.user-info{
+    width: 15rem;
+    justify-content: center;
+    margin: 1rem 1rem 1rem 2rem;
+}
+
+#username{
+    color: green;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.log-links{
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(88, 4, 126);
+}
+
+.log-links:hover{
+    color: yellow;
 }
 
 #main-title {

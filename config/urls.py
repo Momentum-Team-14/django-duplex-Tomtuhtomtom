@@ -31,7 +31,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('registration.backends.default.urls')),
+    path('accounts/', include('registration.backends.simple.urls')),
 ]
 
 urlpatterns += [
@@ -41,5 +41,3 @@ urlpatterns += [
 urlpatterns += [
     path('', RedirectView.as_view(url='flashcards', permanent=False)),
 ]
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

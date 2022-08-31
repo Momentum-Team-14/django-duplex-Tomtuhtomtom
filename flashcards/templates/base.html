@@ -57,13 +57,19 @@
 <body>
     <header>
         <h1>Flashcards App</h1>
-        {% include "flashcards/navigation.html" %}
+            {% if user.is_authenticated %}
+                <div>Hello,&nbsp;{{ user.get_username }}!</div>
+                <div><a href="/accounts/logout/">Logout</a></div>
+                {% include "flashcards/navigation.html" %}
+                {% else %}
+                    <h2>Welcome to your Flashcards app!</h2>
+                    <p><a href="/accounts/login">Login</a></p>
+                {% endif %}
     </header>
-    <main>
-        {% block content %}
-            <h2>Welcome to your Flashcards app!</h2>
-        {% endblock content %}
-    </main>
-</body>
+            <main>
+                {% block content %}
+                {% endblock content %}
+                </main>
+            </body>
 
 </html>

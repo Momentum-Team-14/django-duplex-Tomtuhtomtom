@@ -1,3 +1,4 @@
+
 <article>
     <h4>{{ card.question }}</h4>
     {% if not check_card %}
@@ -5,6 +6,9 @@
         <hr>
         <a href="{% url 'card-update' card.id %}" role="button">
             ✏️ Edit Card
+        </a>
+        <a href="{% url 'card-delete' card.id %}" role="button">
+            🗑️ Delete Card
         </a>
     {% else %}
         <details>

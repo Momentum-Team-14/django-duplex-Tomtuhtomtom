@@ -1,197 +1,41 @@
-
-body{
-    background-color: rgb(236, 187, 95);
-    padding: 0;
-    margin: 0;
+:root {
+    --accent: #6e48ad;
+    --accent-bg: white;
+    --bg: #fff;
+    --text: #212121;
+    --text-light: #585858;
+    --border: #d8dae1;
+    --code: #d81b60;
+    --preformatted: #444;
 }
 
-#main-logo{
-    display: flex;
-    margin: 2rem 17rem 1rem 1rem;
-    padding: 0;
+article {
+    background-color: var(--marked);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em 0;
 }
 
-.main-logo{
-    border: 0.1rem solid black;
-    border-radius: 0.2rem;
-    background-color: white;
-    width: 25rem;
-    height: 3rem;
-    line-height: 3rem;
-    color: red;
-    font-weight: bold;
-    font-size: 2rem;
-    padding: 1rem;
-}
-
-.user-info{
-    width: 15rem;
-    justify-content: center;
-    margin: 1rem 1rem 1rem 2rem;
-}
-
-#username{
-    color: green;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.log-links{
-    text-decoration: none;
-    font-weight: bold;
-    color: rgb(88, 4, 126);
-}
-
-.log-links:hover{
-    color: yellow;
-}
-
-#main-title {
-    color: red;
-    background: linear-gradient(to right bottom, rgb(236, 187, 95), yellow);
+h2 {
     text-align: center;
+}
+
+h2, h4 {
+    margin-top: 0;
+}
+
+hr {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+button,
+a[role="button"] {
+    color: white;
+    text-decoration: none;
+}
+
+input, select, textarea {
     width: 100%;
-    font-size: 3rem;
-}
-
-#logo {
-    width: 3rem;
-    height: 2rem;
-}
-
-.page-title{
-    text-align: center;
-    color: green;
-    font-size: 2rem;
-}
-
-li {
-    list-style: none;
-}
-
-.linked-titles{
-    text-decoration: none;
-    color: green;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.linked-titles:hover{
-    color: yellow;
-}
-
-#list-box {
-    margin: 2rem;
-}
-
-.subject-list, .card-list{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-}
-
-.subject-list-container{
-    border: 1rem solid rgb(121, 224, 121);
-    border-radius: 3rem;
-    outline: 1rem solid black;
-    background-color: green;
-    width: 20rem;
-    height: 10rem;
-    line-height: 10rem;
-}
-
-.subject-list-items {
-    text-decoration: none;
-    font-size: 3rem;
-    font-weight: bold;
-    color: rgb(88, 4, 126);
-}
-
-.subject-list-items:hover{
-    color: yellow;
-}
-
-.subject-title{
-    font-size: 3rem;
-    font-weight: bold;
-    color: rgb(88, 4, 126);
-}
-
-.subject-page-title{
-    display: flex;
-    justify-content: center;
-    margin: 2rem;
-}
-
-.subject-page-container{
-    border: 1rem solid rgb(121, 224, 121);
-    border-radius: 3rem;
-    outline: 1rem solid black;
-    background-color: green;
-    width: 20rem;
-    height: 10rem;
-    line-height: 6rem;
-    text-align: center;
-}
-
-.box-list-container{
-    font-size: 4rem;
-    color: rgb(88, 4, 126);
-}
-
-
-#box-links{
-    text-decoration: none;
-    font-size: 10rem;
-}
-
-#box-detail-title{
-    text-align: center;
-    font-size: 10rem;
-}
-
-#box-number{
-    text-align: center;
-    font-size: 4rem;
-    color: rgb(88, 4, 126);
-}
-
-.card-list-items {
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(88, 4, 126);
-}
-
-.card-list-items:hover{
-    color: yellow;
-}
-
-.card-list-container{
-    border: 1rem solid rgb(121, 224, 121);
-    border-radius: 3rem;
-    outline: 1rem solid green;
-    background-color: white;
-    width: 20rem;
-    height: 10rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-title{
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: rgb(88, 4, 126);
-    text-align: center;
-    width: 100%;
-}
-
-#get-answer-holder{
-    text-align: center;
-}
-
-.correct-question-box{
-    text-align: center;
 }

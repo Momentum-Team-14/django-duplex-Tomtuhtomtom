@@ -4,6 +4,7 @@ from django.views.generic import (
     ListView,
     CreateView,
     UpdateView,
+    DeleteView,
 )
 
 from .models import Card
@@ -25,6 +26,11 @@ class CardCreateView(CreateView):
 
 
 class CardUpdateView(CardCreateView, UpdateView):
+    success_url = reverse_lazy("card-list")
+
+
+class CardDeleteView(DeleteView):
+    model = Card
     success_url = reverse_lazy("card-list")
 
 

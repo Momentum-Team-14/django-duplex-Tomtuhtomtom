@@ -1,131 +1,51 @@
 from django.shortcuts import render
-from .models import User, Answer, Question, Card, Box, Subject
-from django.views import generic
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+)
 
-#When you create a urlpattern in the app urls, create your def and render for it here
-# Create your views here.
-def index(request):
+from .models import Card
+from django.shortcuts import get_object_or_404, redirect
+from .forms import CardCheckForm
 
-    return render(request, 'index.html', {})
-
-
-class AnswerListView(generic.ListView):
-    model = Answer
-    
-    
-class AnswerDetailView(generic.DetailView):
-    model = Answer
+import random
 
 
-class AnswerCreate(CreateView):
-    model = Answer
-    fields = ['answer_content']
-
-
-class AnswerUpdate(UpdateView):
-    model = Answer
-    fields = ['answer_content']
-
-
-class AnswerDelete(DeleteView):
-    model = Answer
-    success_url = reverse_lazy('answers')
-
-class QuestionListView(generic.ListView):
-    model = Question
-
-
-class QuestionDetailView(generic.DetailView):
-    model = Question
-
-
-class QuestionCreate(CreateView):
-    model = Question
-    fields = ['question_content']
-
-
-class QuestionUpdate(UpdateView):
-    model = Question
-    fields = ['question_content']
-
-
-class QuestionDelete(DeleteView):
-    model = Question
-    success_url = reverse_lazy('questions')
-
-
-class CardListView(generic.ListView):
+class CardListView(ListView):
     model = Card
+    queryset = Card.objects.all()
 
 
-class CardDetailView(generic.DetailView):
+class CardCreateView(CreateView):
     model = Card
+    fields = ["question", "answer", "box"]
+    success_url = reverse_lazy("card-create")
 
 
-class CardCreate(CreateView):
-    model = Card
-    fields = ['question', 'answer']
+class CardUpdateView(CardCreateView, UpdateView):
+    success_url = reverse_lazy("card-list")
 
 
-class CardUpdate(UpdateView):
-    model = Card
-    fields = ['question', 'answer']
+class BoxView(CardListView):
+    template_name = "flashcards/box.html"
+    form_class = CardCheckForm
 
+    def get_queryset(self):
+        return Card.objects.filter(box=self.kwargs["box_num"])
 
-class CardDelete(DeleteView):
-    model = Card
-    success_url = reverse_lazy('cards')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["box_number"] = self.kwargs["box_num"]
+        if self.object_list:
+            context["check_card"] = random.choice(self.object_list)
+        return context
 
-class BoxListView(generic.ListView):
-    model = Box
-    
-    
-class BoxDetailView(generic.DetailView):
-    model = Box
+    def post(self, request, *args, **kwargs):
+        form = self.form_class(request.POST)
+        if form.is_valid():
+            card = get_object_or_404(Card, id=form.cleaned_data["card_id"])
+            card.move(form.cleaned_data["solved"])
 
-
-class BoxCreate(CreateView):
-    model = Box
-    fields = ['name', 'cards']
-
-
-class BoxUpdate(UpdateView):
-    model = Box
-    fields = ['name', 'cards']
-
-
-class BoxDelete(DeleteView):
-    model = Box
-    success_url = reverse_lazy('boxes')
-
-
-class SubjectListView(generic.ListView):
-    model = Subject
-
-
-class SubjectDetailView(generic.DetailView):
-    model = Subject
-
-
-class SubjectCreate(CreateView):
-    model = Subject
-    fields = ['name', 'boxes']
-
-
-class SubjectUpdate(UpdateView):
-    model = Subject
-    fields = ['name', 'boxes']
-
-
-class SubjectDelete(DeleteView):
-    model = Subject
-    success_url = reverse_lazy('subjects')
-
-
-def showAnswer():
-    pass
-
-def hideAnswer():
-    pass
+        return redirect(request.META.get("HTTP_REFERER"))

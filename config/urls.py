@@ -31,13 +31,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('flashcards.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
-]
-
-urlpatterns += [
-    path('flashcards/', include('flashcards.urls')),
-]
-
-urlpatterns += [
-    path('', RedirectView.as_view(url='flashcards', permanent=False)),
 ]

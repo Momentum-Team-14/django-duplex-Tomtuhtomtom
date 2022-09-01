@@ -12,7 +12,6 @@ class User(BaseUser):
 
 
 class Subject(models.Model):
-    title = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title
@@ -21,6 +20,7 @@ class Subject(models.Model):
 class Card(models.Model):
     question = models.CharField(max_length=100)
     answer = models.CharField(max_length=100)
+    subject = models.CharField(max_length=100)
     box = models.IntegerField(
         choices=zip(BOXES, BOXES),
         default=BOXES[0],

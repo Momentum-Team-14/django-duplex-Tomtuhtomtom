@@ -1,5 +1,6 @@
 {% load static %}
 <article class="card-box">
+    <p class="subject-title">Subject: {{ card.subject }}</p>
     <h4 class="card-question">Q: {{ card.question }}</h4>
     {% if not check_card %}
         <p class="card-answer">A: {{ card.answer }}</p>

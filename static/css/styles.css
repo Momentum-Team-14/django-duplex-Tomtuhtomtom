@@ -45,9 +45,10 @@ body{
     margin: 1rem;
     background-color:darkkhaki;
     border: 1px solid darkkhaki;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
     color: navy;
     padding: 0.3rem;
+    font-weight: bold;
 }
 
 .box-link:hover{
@@ -59,9 +60,11 @@ body{
     margin: 1rem;
     background-color:darkkhaki;
     border: 1px solid darkkhaki;
-    border-radius: 0.3rem;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
     color: navy;
-    padding: 0.3rem;
+    padding: 0.5rem;
+    font-weight: bold;
 }
 
 .nav-list-link:hover{
@@ -84,6 +87,10 @@ body{
     padding: 1rem;
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+.create-button{
+    margin: 0;
 }
 
 .create-button:hover, .edit-button:hover, .delete-button:hover{
@@ -119,7 +126,11 @@ hr{
     font-weight: bold;
 }
 
-.create-button-container, .edit-delete-buttons-container{
+.create-button-container{
+    text-align: center;
+}
+
+.edit-delete-buttons-container, .create-button-container{
     margin: 2rem 0;
 }
 
@@ -142,6 +153,13 @@ hr{
     font-weight: bold;
 }
 
+.subject-title{
+    margin: 1rem 0 1rem 4rem;
+    font-size: 1.5rem;
+    color:chocolate;
+    font-weight: bold;
+}
+
 .reveal-container{
     margin: 1rem 0 1rem 4rem;
 }
@@ -157,45 +175,3 @@ hr{
     font-weight: bold;
     font-size: 1.5rem;
 }
-/* 
-:root {
-    --accent: #6e48ad;
-    --accent-bg: white;
-    --bg: #fff;
-    --text: #212121;
-    --text-light: #585858;
-    --border: #d8dae1;
-    --code: #d81b60;
-    --preformatted: #444;
-}
-
-article {
-    background-color: var(--marked);
-    border: 1px solid var(--border);
-    border-radius: 5px;
-    padding: 1em;
-    margin: 1em 0;
-}
-
-h2 {
-    text-align: center;
-}
-
-h2, h4 {
-    margin-top: 0;
-}
-
-hr {
-    background: var(--accent);
-    border-color: var(--accent);
-}
-
-button,
-a[role="button"] {
-    color: white;
-    text-decoration: none;
-}
-
-input, select, textarea {
-    width: 100%;
-} */

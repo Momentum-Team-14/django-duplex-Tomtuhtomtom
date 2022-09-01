@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
@@ -7,8 +7,8 @@ from django.views.generic import (
     DeleteView,
 )
 
-from .models import Card
-from django.shortcuts import get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Card, User
 from .forms import CardCheckForm
 
 import random

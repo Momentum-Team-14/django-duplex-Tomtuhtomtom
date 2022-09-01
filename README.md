@@ -1,77 +1,81 @@
-# Choose a Project
+# Welcome to Tomtuhtomtom's Flashcard App
 
-This week, you will be on a small team working on a project. 
+This app allows users to register, login and create flashcards for study purposes.  A traditional flashcard has a question written on one side and an answer written on the other side in which people can test themselves by looking at the question without being able to see the solution until the card is flipped over.  In this app, the user will be able to input questions and answers and when ready to test themselves, the questions will be displayed with the solutions hidden until the user is ready to display the answer.  This app followed the Real Python tutorial with some additional features and styling adjustments.  Go to https://realpython.com/django-flashcards-app/ for Real Python's tutorial.
 
-Use your combined creativity and good judgment to make decisions as you work. Users expect to see some common features in web applications. If they are not mentioned in the project's description, you should still do them. For example: in the code snippet application, users should have avatar images. You don't have to handle file uploads yourself -- you could use Gravatar with [django-gravatar](https://github.com/twaddington/django-gravatar) -- but you need some way of handling that.
+# Getting started
 
-In addition to those small features, come up with your own features to make your project unique. You will likely use this project in your portfolio, so make it something you can be proud of.
+Installation steps:
+1. Open your terminal
 
-No starter repo is provided, so you will have to run the `django-admin` commands to create a new project.
-# Rules for all projects
+For Windows
+Click Start and search for "Command Prompt." You can also press Ctrl + r on your keyboard, type "cmd" and then click OK.
 
-- Your application should be styled. It should be usable and aesthetically neutral, at a minimum. You can use a library or you can write custom css, or both. It is up to you.
-- Your application must include a README.md file with instructions on how to run it. [Take a look at this site on README basics](https://www.makeareadme.com/) for a good markdown template you can follow, and links to example READMEs.
-- Your application should be able to run from scratch by downloading the repo, running `pipenv install`, `pipenv shell`, `python manage.py migrate`, and `python manage.py runserver`. If there are any other steps necessary, please put them in the README.md file.
+For MacOS
+Open Launchpad and search for terminal. You can also press command⌘ + space on your keyboard and search for "terminal."
 
-## Stretch goal for each project: trying new things
+For Linux
+The terminal will be accessed differently depending on which interface you use. Check out Ubuntu's Using the Terminal page for the various ways to access the terminal. https://help.ubuntu.com/community/UsingTheTerminal?action=show&redirect=BasicCommands
 
-Teams should consider trying something they don't know how to do on their project. This could be a Python or JavaScript library they haven't used before or a feature of Django they haven't tried.
+2.  Make a directory to copy the app to your computer
 
-# The Projects
+Once you are in the terminal, you will use the command mkdir to make a directory.  Navigate to where you would like to make the directory type mkdir then the name of the directory.  For example: mkdir name_of_directory
 
-Your team should choose one of these options.
-## Option 1: Code Snippet Manager
+3. Make sure Git is installed on your computer
 
-You need a good way to manage snippets of code you reuse often. You are going to build a web application that has these goals:
+Follow github's insallation guides for intalling Git here: https://github.com/git-guides/install-git
 
-- Logged in users can add code snippets.
-- Logged in users can search their own code snippets and get results.
-- Each user has a profile page that shows their public code snippets. Other users can copy a snippet with one click, adding it to their library of snippets.
+4. Go to the Github website containing the app
 
-### How snippets work
+If you are viewing this page, more than likely you are at https://github.com/Momentum-Team-14/django-duplex-Tomtuhtomtom if not, you can click the link to find the source code for the app. 
 
-A snippet has code (required), a language (required), a title (optional), and whatever other fields make sense. Some ideas to consider: a description or a list of tags.
+5. Make a clone of the app
 
-If you copy a snippet by clicking the copy button (or whatever UI element is used for this purpose), there's a link back to the original snippet. The easiest way to do this is with a foreign key. One should be able to see how many times a snippet has been copied.
+From there, you will be able to click on the green code button and clone a copy for yourself by clicking on the button next to the url that looks like two boxes with on one top of the other.
 
-The reason why we copy snippets instead of "favorite" them is that they can change. The original snippet creator can edit their snippet; the copying user can edit their copy.
+6. Copy the app to your directory
 
-### How search works
+Back in the terminal and in your directory type git clone then paste the copied url for the app.  It should look like this: git clone https://github.com/Momentum-Team-14/django-duplex-Tomtuhtomtom.git Once you've cloned the project you should see a new directory called django-duplex-Tomtuhtomtom in the directory you made. Go into this directory.
 
-Search should look for terms in the title, in other fields like a description or tags, and in the language field. If I search for "javascript auth," I should see any snippets I have about authentication using JavaScript. See [search](https://docs.djangoproject.com/en/3.2/topics/db/search/) in the Django documentation for some ideas.
+7. Install pip, pipenv, python, and django
 
-### How much of this is JavaScript?
+There are several options for virtual environments.  We recommend installing pip and pipenv to handle the virtual environment needed to run this app.  
 
-This can vary, but the two parts that _definitely_ need JavaScript are syntax highlighting and copying a code snippet to your clipboard.
+Go to https://pip.pypa.io/en/stable/installation/ for intructions on installing pip.
 
-For syntax highlighting, check out [Prism.js](https://prismjs.com/) or [Highlight.js](https://highlightjs.org/).
+Go to https://pypi.org/project/pipenv/ for installation and more information about pipenv.
 
-See [this article on native browser copy to clipboard](https://css-tricks.com/native-browser-copy-clipboard/) for ideas on how to copy to clipboard.
+Go to https://www.python.org/downloads/ for information and guides for python.
 
-## Option 2: Flashcards
+Go to https://docs.djangoproject.com/en/4.1/topics/install/ for intructions on installing django.
 
-You want to make an application to help people learn via flashcards. You are going to build a web application that has these goals:
+8. Start the virtual environment and migrate the database
 
-- Logged in users can create multiple decks of flashcards, each with a prompt or question and an answer.
-- Logged in users can quiz themselves on a deck.
-- Success and failure for each card is recorded.
+Once everthing in step 7 is installed, you should be able to launch the virtual environment from your terminal propmt by typing: pipenv shell  
 
-### How decks and cards work
+You'll need to ensure that database is configured properly in order for the app to function correctly.  You should be in the right directory but you may need to ensure that you are in the directory that contains the file manage.py.  Run the following commands in your terminal: 
 
-A user can have multiple decks of flashcards. Each deck has a title. Each flash card has a prompt or question and an answer.
+python manage.py makemigrations
+python manage.py migrate
 
-When a user is quizzing themselves on a deck, they _do not_ have to type in answers. They are shown the prompt, they click to see the answer; they then mark whether they answered it correctly or not. They should see one card at a time.
+This first command should show if there is anything to migrate and prepares the migratation and if the migrations are successful, the second command should result in messages with OK at the end of them.
 
-When the user marks success or failure on a card, this should be recorded.
+9. Run the local server
 
-The cards should be shown in a random order at a minimum. A preferable method would be to use something like [the Leitner system](https://www.virtualsalt.com/learn10.html) for flash cards. This system uses review times; you could use that, or just use the idea of multiple boxes, with cards in lower boxes coming up more often.
+If steps 1 through 8 were successful, you should be ready to launch the app by running the local server.  You do this by typing into your terminal: python manage.py runserver
 
-### Creating decks and running through decks
+If successful, you will get a message stating that it started the development server, the expected address will be http://127.0.0.1:8000/ Enter this address into your browser address bar and the application should load
 
-This application has two very distinct parts: creating decks and cards and then running through those decks. This is a natural place to split work. Do not forget to make creating decks and cards an easy-to-use experience.
+# How to use the app
 
-### How much of this is JavaScript?
+Once the app has loaded, you should see a page asking you to login.  If you don't have an account, don't worry, when you click on login, there will be an option to register down at the bottom of the page.  Click on register and fill out the information in the form and once you've registered, it will automatically take you back to the home page showing you the full contents of the app.  The login conveniently becomes a link to logout when you are finished. 
 
-"Flipping" a card (you don't have to animate a card flip, although if you do, that's very cool) will almost certainly require JavaScript.
+There will be some links underneath the welcome message displaying your username letting you know you are logged in.  The top link will say All Cards and there are three boxes below that link.  This app uses the Leitner System for studing with flashcards and you can get more information provided by Mindedge here: https://www.mindedge.com/learning-science/the-leitner-system-how-does-it-work/
 
-You could have a page load in between cards and reduce your amount of JavaScript. Depending on how you do this, it could also record success or failure, eliminating most of your JavaScript.
+The main content of the page will show all of the cards that have been created in the app so first, we need to create some cards.  There is a link underneath the header that says "All Cards" for you to create a card.  Click this link and it will bring up a form in which you type in the question, the answer, the subject category and it's recommended that all cards are placed in box 1 when created so 1 will show automatically but you have the ability to change the box if desired. Once you have filled out all the information and click the Save Card button, it will show the card in the main page.  You will also notice that the number of cards in the box links at the top of the page has adjusted accordingly.  
+
+Once you have created some cards and are ready to start studying, simply click on the box link at the top of the page you would like to study and it will randomly choose one of the cards in the box and display all the information except for the answer.  You should see what box you are in, how many cards are left in that particular box, the subject category and the question.  Underneath the question, you will notice a triangle and the words "Show Answer" need to it.  When you are ready to check the answer, click on triangle or the words and the answer will appear below.  If you guessed correctly, good job! Click on the button that says "I got it right!" and the card will automatically be placed in the next box up so cards in box 1 that are guessed correctly will go to box 2 and from box 2 will go to box 3.  If you study using box 3, correct answered cards will stay in box 3.  If you guessed incorrectly, you'll want to click the button that says "I got it wrong!" and the card will move back to box 1 no matter which box it was in.
+
+Now that you've got the hang of creating cards and how to use them to study, what if you want to change the card or get rid of it altogether?  If so, click the All Cards link at the top of the page at any time to go back to the list of all the cards and under each card answer, there are two links.  One link to edit the card and one to delete it.  If you click the edit card, it will show open a form showing you the current information and simply change the information that you would like to change and click "Save Card."  The Cancel link under the save button will take you back to the All Cards page.  If you click the delete card link, it will open a page asking you if you are sure along with a button to confirm and an option to cancel if you clicked delete by mistake.  
+
+That's it!  You are ready to explore the app and use it to make as many cards as you'd like to help you study.  This is the first version of the app.  Many more features, styles, options to come!
+

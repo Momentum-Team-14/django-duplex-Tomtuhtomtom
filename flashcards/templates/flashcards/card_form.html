@@ -1,18 +1,18 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
     {% if card %}
-        <h2>✏️ Edit Card</h2>
+        <h2 class="edit-card">✏️ Edit Card</h2>
     {% else %}
-        <h2>✨ Create New Card</h2>
+        <h2 class="create-card">✨ Create New Card</h2>
     {% endif %}
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="Save Card">
+        <input class="save-button" type="submit" value="Save Card">
     </form>
-    <a href="{% url 'card-list' %}">
+    <a class="card-list-link" href="{% url 'card-list' %}">
         Cancel
     </a>
 {% endblock %}

@@ -1,19 +1,19 @@
-
+{% load static %}
 <article>
     <h4>{{ card.question }}</h4>
     {% if not check_card %}
-        <p>{{ card.answer }}</p>
+        <p class="card-answer">{{ card.answer }}</p>
         <hr>
-        <a href="{% url 'card-update' card.id %}" role="button">
+        <a class="edit-button" href="{% url 'card-update' card.id %}" role="button">
             ✏️ Edit Card
         </a>
-        <a href="{% url 'card-delete' card.id %}" role="button">
+        <a class="delete-button" href="{% url 'card-delete' card.id %}" role="button">
             🗑️ Delete Card
         </a>
     {% else %}
-        <details>
-            <summary>Reveal Answer</summary>
-            <p>{{ card.answer }}</p>
+        <details class="reveal-container">
+            <summary class="reveal-answer">Reveal Answer</summary>
+            <p class="answer-revealed">{{ card.answer }}</p>
         </details>
         <hr>
         {% include "flashcards/card_check_form.html" with solved=True %}

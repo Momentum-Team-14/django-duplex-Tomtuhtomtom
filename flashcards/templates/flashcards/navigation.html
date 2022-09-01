@@ -1,7 +1,7 @@
-
+{% load static %}
 {% load cards_tags %}
 
 <nav>
-    <a href="{% url 'card-list' %}">🗂 All Cards</a>
+    <a class="nav-list-link" href="{% url 'card-list' %}">🗂 All Cards</a>
     {% boxes_as_links %}
 </nav>

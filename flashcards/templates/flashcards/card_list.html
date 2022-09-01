@@ -1,17 +1,17 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% load humanize %}
 
 {% block content %}
-    <h2>
+    <h2 class="all-cards-title">
         All Cards
     </h2>
-    <a href="{% url 'card-create' %}" role="button">
+    <a class="create-button" href="{% url 'card-create' %}" role="button">
         ✨ Create New Card
     </a>
     {% for card in card_list %}
         {% ifchanged %}
-            <h3>🗃 {{ card.box | ordinal }} Box</h3>
+            <h3 class="card-box-title">🗃 {{ card.box | ordinal }} Box</h3>
         {% endifchanged %}
         {% include "flashcards/card.html" %}
     {% endfor %}

@@ -99,13 +99,17 @@ body{
     border: 2px solid rgb(255, 255, 125);
     border-radius: 0.5rem;
     color: navy;
-    padding: 1rem;
+    padding: 0.3rem;
     font-weight: bold;
     font-size: 1.2rem;
 }
 
 .create-button{
     margin: 0;
+}
+
+.delete-button{
+    margin: 0 0 0 1rem;
 }
 
 .create-button:hover, .edit-button:hover, .delete-button:hover{

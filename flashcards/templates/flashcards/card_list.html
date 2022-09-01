@@ -6,12 +6,15 @@
     <h2 class="all-cards-title">
         All Cards
     </h2>
+    <div class="create-button-container">
     <a class="create-button" href="{% url 'card-create' %}" role="button">
         ✨ Create New Card
     </a>
+    </div>
+    <hr>
     {% for card in card_list %}
         {% ifchanged %}
-            <h3 class="card-box-title">🗃 {{ card.box | ordinal }} Box</h3>
+            <h3 class="card-box-title">Currently in {{ card.box | ordinal }} Box 🗃</h3>
         {% endifchanged %}
         {% include "flashcards/card.html" %}
     {% endfor %}

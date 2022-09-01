@@ -1,11 +1,11 @@
-<!-- cards/templates/cards/base.html -->
-{% load static %}
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
     <title>Flashcards</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
                 <div class="log-container"><a class="log-links"href="/accounts/logout/">Logout</a></div>
                 {% include "flashcards/navigation.html" %}
                 {% else %}
-                    <h2>Welcome to your Flashcards app!</h2>
+                    <h2>Please login to continue!</h2>
                     <p><a class="log-links"href="/accounts/login">Login</a></p>
                 {% endif %}
     </header>

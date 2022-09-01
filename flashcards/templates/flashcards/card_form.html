@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+    <div class="card-form">
     {% if card %}
         <h2 class="edit-card">✏️ Edit Card</h2>
     {% else %}
@@ -15,4 +16,5 @@
     <a class="card-list-link" href="{% url 'card-list' %}">
         Cancel
     </a>
+    </div>
 {% endblock %}

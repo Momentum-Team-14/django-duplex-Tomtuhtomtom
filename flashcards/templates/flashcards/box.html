@@ -4,7 +4,7 @@
 
 {% block content %}
     <h2 class="box-title">🗃 {{ box_number | ordinal }} Box</h2>
-    <mark class="box-number-">{{ object_list | length }}</mark> Card{{ object_list | pluralize }} left in box.
+    <mark class="box-number">{{ object_list | length }}</mark><span class="cards-left"> Card{{ object_list | pluralize }} left in the box.</span>
     <hr>
     {% if check_card %}
         {% include "flashcards/card.html" with card=check_card %}

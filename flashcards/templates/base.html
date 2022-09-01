@@ -11,7 +11,12 @@
 <body>
     <header class="main-header">
         <h1 class="main-title">Q: What is this app?</h1>
-        <h2 class="main-subtitle">A: <em>Flashcards!</em></h2>
+        <div class="main-detail-tag">
+        <details>
+            <summary class="main-hidden">Show Answer</summary>
+            <h2 class="main-subtitle">A: <em>Flashcards!</em></h2>
+        </details>
+        </div>
             {% if user.is_authenticated %}
                 <div class="user-name">Hello,&nbsp;{{ user.get_username }}!</div>
                 <div class="log-container"><a class="log-links"href="/accounts/logout/">Logout</a></div>
